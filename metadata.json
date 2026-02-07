@@ -1,0 +1,5 @@
+{
+  "name": "LoveTimeline",
+  "description": "A cinematic relationship timeline creator using Remotion and React.",
+  "requestFramePermissions": []
+}

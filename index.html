@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveTimeline 💘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              head: ['Playfair Display', 'serif'],
+              body: ['Montserrat', 'sans-serif'],
+              accent: ['Cormorant Garamond', 'serif'],
+              hand: ['Dancing Script', 'cursive'],
+              typewriter: ['Special Elite', 'monospace'],
+            },
+            colors: {
+              'sw-bg': '#fdfbf7',       /* Cream/Warm White */
+              'sw-text': '#2d3436',     /* Soft Charcoal */
+              'sw-sub': '#636e72',      /* Muted Gray */
+              'sw-lavender': '#a29bfe', /* Soft Lavender */
+              'sw-salmon': '#fab1a0',   /* Soft Salmon */
+              'sw-teal': '#81ecec',     /* Soft Teal */
+              'sw-card': '#ffffff',
+            },
+            boxShadow: {
+              'soft': '0 10px 40px rgba(0,0,0,0.06)',
+              'soft-hover': '0 20px 50px rgba(0,0,0,0.1)',
+              'inner-light': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+              'glow': '0 0 30px rgba(162, 155, 254, 0.4), 0 10px 40px rgba(0,0,0,0.1)', /* Lavender glow for main containers */
+              'glow-card': '0 0 20px rgba(250, 177, 160, 0.3), 0 5px 15px rgba(0,0,0,0.05)', /* Salmon glow for smaller items */
+            },
+            animation: {
+              'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Elegant scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #dcdde1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b2bec3; 
+      }
+      
+      body {
+        background-color: #fdfbf7;
+        color: #2d3436;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "remotion": "https://esm.sh/remotion@^4.0.419",
+    "@remotion/player": "https://esm.sh/@remotion/player@^4.0.419",
+    "qrcode": "https://esm.sh/qrcode@1.5.3",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-sw-text font-body antialiased selection:bg-sw-lavender selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
