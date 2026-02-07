@@ -32,14 +32,31 @@ export const Scrapbook: React.FC<ScrapbookProps> = ({ moments }) => {
         setIsGenerating(true);
 
         try {
-            // Small delay to ensure images are loaded/rendered
+            // Store original styles
+            const originalWidth = scrapbookRef.current.style.width;
+            const originalHeight = scrapbookRef.current.style.height;
+            const originalMaxWidth = scrapbookRef.current.style.maxWidth;
+
+            // Temporarily set fixed desktop dimensions for capture
+            scrapbookRef.current.style.width = '900px';
+            scrapbookRef.current.style.height = '650px';
+            scrapbookRef.current.style.maxWidth = '900px';
+
+            // Small delay to ensure layout adjusts and images are loaded
             await new Promise(resolve => setTimeout(resolve, 500));
 
             const canvas = await html2canvas(scrapbookRef.current, {
                 scale: 2, // High resolution
                 useCORS: true, // Important for Unsplash/external images
                 backgroundColor: null,
+                width: 900,
+                height: 650,
             });
+
+            // Restore original styles
+            scrapbookRef.current.style.width = originalWidth;
+            scrapbookRef.current.style.height = originalHeight;
+            scrapbookRef.current.style.maxWidth = originalMaxWidth;
 
             const link = document.createElement('a');
             link.download = 'Our-Love-Scrapbook.png';
@@ -48,6 +65,13 @@ export const Scrapbook: React.FC<ScrapbookProps> = ({ moments }) => {
         } catch (error) {
             console.error("Scrapbook generation failed:", error);
             alert("Could not generate image. Try creating fewer moments or using local images.");
+
+            // Ensure styles are restored even on error
+            if (scrapbookRef.current) {
+                scrapbookRef.current.style.width = '';
+                scrapbookRef.current.style.height = '';
+                scrapbookRef.current.style.maxWidth = '';
+            }
         } finally {
             setIsGenerating(false);
         }
