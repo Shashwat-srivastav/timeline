@@ -9,12 +9,12 @@ interface MomentListProps {
 
 export const MomentList: React.FC<MomentListProps> = ({ moments, onRemoveMoment }) => {
   return (
-    <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-soft p-8 md:p-10 relative animate-slide-up transition-all duration-500 hover:shadow-glow hover:-translate-y-1 border border-white/50" style={{ animationDelay: '200ms' }}>
-      
+    <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-soft p-10 relative animate-slide-up transition-all duration-500 hover:shadow-glow hover:-translate-y-1 border border-white/50" style={{ animationDelay: '200ms' }}>
+
       <div className="flex justify-between items-end mb-8 border-b border-gray-100/50 pb-4">
         <div>
-            <span className="text-sw-salmon font-bold tracking-widest text-xs uppercase mb-2 block">Step 02</span>
-            <h2 className="text-3xl font-head font-bold text-sw-text">Timeline</h2>
+          <span className="text-sw-salmon font-bold tracking-widest text-xs uppercase mb-2 block">Step 02</span>
+          <h2 className="text-3xl font-head font-bold text-sw-text">Timeline</h2>
         </div>
         <div className="text-sw-sub font-accent italic text-lg">{moments.length} Memories</div>
       </div>
@@ -41,9 +41,9 @@ export const MomentList: React.FC<MomentListProps> = ({ moments, onRemoveMoment 
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-1">
-                    <span className="text-xs font-bold text-sw-lavender tracking-widest uppercase">0{index + 1}</span>
-                    <span className="h-[1px] w-8 bg-gray-200"></span>
-                    <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">{m.date}</span>
+                  <span className="text-xs font-bold text-sw-lavender tracking-widest uppercase">0{index + 1}</span>
+                  <span className="h-[1px] w-8 bg-gray-200"></span>
+                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">{m.date}</span>
                 </div>
                 <h3 className="font-head text-2xl text-sw-text leading-tight mb-1">{m.title}</h3>
                 <p className="text-sm font-accent italic text-sw-sub truncate">{m.subtitle}</p>
