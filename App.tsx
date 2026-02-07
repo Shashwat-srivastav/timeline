@@ -42,19 +42,19 @@ export default function App() {
       <AbstractBackground />
 
       <Header />
-
+      
       <PhotoReel />
 
-      <div className="max-w-7xl mx-auto px-12 relative z-10 mt-8">
-        <div className="grid grid-cols-12 gap-12 items-start mb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           {/* Left Column - Inputs */}
-          <div className="col-span-7 flex flex-col gap-10">
+          <div className="lg:col-span-7 flex flex-col gap-10">
             <MomentForm onAddMoment={addMoment} />
             <MomentList moments={moments} onRemoveMoment={removeMoment} />
           </div>
 
           {/* Right Column - Preview */}
-          <div className="col-span-5 relative sticky top-8">
+          <div className="lg:col-span-5 relative lg:sticky lg:top-8">
             <TimelinePreview moments={moments} />
           </div>
         </div>
@@ -64,10 +64,10 @@ export default function App() {
 
         {/* Full Width Scrapbook Section */}
         <div className="relative z-10 pt-4">
-          <Scrapbook moments={moments} />
+            <Scrapbook moments={moments} />
         </div>
       </div>
-
+      
       {/* Subtle Footer */}
       <div className="text-center py-12 text-sw-sub font-accent italic text-sm opacity-60 relative z-10 flex flex-col items-center gap-4">
         <GarlandDivider className="opacity-30 scale-75 !py-0" />
